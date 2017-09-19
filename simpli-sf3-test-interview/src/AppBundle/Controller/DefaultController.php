@@ -18,4 +18,11 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+    /**
+     * @Route("/my-work", name="supertable")
+     */
+    public function superTableAction(Request $request)
+    {
+        return $this->render('supertable/index.html.twig');
+    }
 }
