@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Our super table</h1>
+    <table>
+        <th>
+            item1
+        </th>
+        <th>
+            item2
+        </th>
+        <th>
+            item1+item2
+        </th>
+        <th>
+            Parité
+        </th>
+        {% for x in data %}
+            {% set s=0 %}
+
+            <tr>
+                {% for y in x %}
+                    <td>
+                        {%  set s=s+y %}
+                        {{ y }}
+                    </td>
+                {% endfor %}
+                <td>
+                    {{ s }}
+                </td>
+                <td>
+                    {% if s%2==0 %}
+                        Paire
+                    {% else %}
+                        Impaire
+                    {% endif %}
+
+
+                </td>
+            </tr>
+
+        {% endfor %}
+    </table>
+
+
+{% endblock %}
