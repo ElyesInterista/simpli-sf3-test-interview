@@ -38,6 +38,11 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        data: '%inputData%'
+    cache: false
+
+
 
 # Doctrine Configuration
 doctrine:
